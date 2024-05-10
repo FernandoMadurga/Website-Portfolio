@@ -153,43 +153,44 @@ img.emoji {
    <!-- <img src="" />-->
 		<p>
 
-			<p class="slider-infos-2">  The following summary aims to expose the path followed to manage a series of queries in order to get insights from a Dataset on COVID Deaths and Vaccinations. It was part of a project-study from my master's degree. At the end, I leave a link to my Github account where you will be able to see all of the queries employed.  </p>
+			<p class="slider-infos-2">  The following summary aims to expose the path followed to manage a series of queries in order to get insights of vaccination coverage from a Dataset on COVID Deaths and Vaccinations. It was part of a project from a EdX MIT Data Science course. At the end, I leave a link to my Github account where you will be able to see all of the queries employed.  </p>
     
-			<p class="slider-infos-2">  First, I download and familiarize myself with the COVID dataset. I made necessary adjustments in Excel, such as formatting and organizing data for SQL integration.  </p>
+			<p class="slider-infos-2">  First, I downloaded and familiarized myself with the COVID dataset. I made some adjustments in Excel, such as formatting and organizing data for SQL integration.  </p>
 
 			<img class="graph" src="excel-fomatting.png" alt="" data-src="excel-fomatting.png" data-src-retina="excel-fomatting.png" />
 			<noscript><img src="excel-fomatting.png" />
 				<span id="mce_marker" data-mce-type="bookmark">​</span></noscript>
     
-			<p class="slider-infos-2">   I then started querying the SQL database to explore COVID data, focusing on cases, deaths, vaccinations, and population metrics. </p>
+			<p class="slider-infos-2">   Then I created a new database in SQL for the project. I encountered import issues when getting Excel data into SQL that went back to having downloaded incompatible SQL servers. So I researched the right way of doing it and started again choosing the appropriate path. Afterwards, I started querying the SQL database to explore COVID data, focusing on cases, deaths, vaccinations, and population metrics.  </p>
     
 			<img class="graph" src="exploring.png" alt="" data-src="exploring.png" data-src-retina="exploring.png" />
 			<noscript><img src="exploring.png" />
 				<span id="mce_marker" data-mce-type="bookmark">​</span></noscript>
 			
-			<p class="slider-infos-2">   Later, I engaged in more complex SQL tasks, including data cleaning, applying aggregate functions, and performing calculations to derive insights from the data. </p>
+			<p class="slider-infos-2">   Later, I did some data cleaning, applying aggregate functions, I encountered another problem, this time regarding an integer incompatibility in the field "vac.new_vaccinations". The problem was that the original datatype was not an integer, so I changed the type to continue. I then performed calculations to start deriving relevant insights into how vaccination efforts are progressing over time within different locations, understand the extent of vaccination coverage in different areas, and visualizing trends such as acceleration or deceleration in vaccination rates. These insights were obtained by calculating the running total of vaccinations, by calculating ther percentage of the population vaccinated over time, and ordering the data by location and date, respectevely. The specific queries are shown in the image below. </p>
     
 			<img class="graph" src="calculations.png" alt="" data-src="calculations.png" data-src-retina="calculations.png" />
 			<noscript><img src="calculations.png" />
 				<span id="mce_marker" data-mce-type="bookmark">​</span></noscript>
 			
-			<p class="slider-infos-2">  I learned to join different data tables based on common columns like location and date for comprehensive analysis.  </p>
+			<p class="slider-infos-2">  Afterwards, I kept deepening my analysis of vaccination coverage. I added the clause (CTE) "PopvsVac" to specify a temporary result set that contains columns for the continent, location,date, population, new vaccinations, and a cumulative count of people vaccinated. I added a calculation of the percentage, "RollingPeopleVaccinated/population * 100", of the population that has been vaccinated, using the cumulative total of vaccinations. I also included a Join clause, with which the data is pulled from the CovidDeaths table (dea) and joined with the CovidVaccinations table (vac) on both location and date. This join ensures that the data lined up is correct in terms of both spatial and temporal dimensions.   </p>
     
 			<img class="graph" src="joining.png" alt="" data-src="joining.png" data-src-retina="joining.png" />
 			<noscript><img src="joining.png" />
 				<span id="mce_marker" data-mce-type="bookmark">​</span></noscript>
 	
 			
-			<p class="slider-infos-2">  Next, I stablished SQL views to organize and simplify access to processed data, preparing for visualization. I formated and structured data specifically for visualization, considering the creation of visual representations in Tableau. </p>
+			<p class="slider-infos-2">  Next, I stablished SQL views to simplify access to processed data, preparing for visualizatio, using the statement "view PercentPopulationVaccinated as". The views are helpful because they allow to quickly generate reports or visualize data on vaccination progress without writing complex SQL queries each time. The next step in the visualization process it to create visual representations in Tableau. 
+
+  </p>
     
     
 			<img class="graph" src="preparing-for-view.png" alt="" data-src="preparing-for-view.png" data-src-retina="preparing-for-view.png" />
 			<noscript><img src="preparing-for-view.png" />
 				<span id="mce_marker" data-mce-type="bookmark">​</span></noscript>
 
-			<p class="slider-infos-2">  Finally, I saved and upload SQL scripts to my repository on GitHub, ensuring is clear and accesible.  </p>
 
-			<p class="slider-infos-3">  Feel free to check the whole queries in my <a class="highlight" href="https://github.com/FernandoMadurga/Portfolio-Projects/blob/main/COVID-Data-Exploration" alt="underlie not giving up">Github account</a>, thank you for reading!  </p>  
+			<p class="slider-infos-3"> Finally, I saved and upload SQL scripts to my repository on GitHub. Feel free to check the whole queries in my <a class="highlight" href="https://github.com/FernandoMadurga/Portfolio-Projects/blob/main/COVID-Data-Exploration" alt="underlie not giving up">Github account</a>, thank you for reading!  </p>  
 			
 
 			<style>
