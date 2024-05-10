@@ -1812,7 +1812,8 @@ img.aligncenter {
 	/* max-width: 35%; */}
 
 .archive-hentry-content {
-	opacity: 0;
+	opacity: 1;
+	/* opacity: 0; */
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -1847,7 +1848,9 @@ img.aligncenter {
 }
 
 .archive-hentry-content:hover {
-	opacity: 1;
+	/* opacity: 1; */
+	opacity: 0;  /* Less visible on hover */
+	background-color: transparent; /* Clear background on hover */
 }
 
 .archive.post-type-archive-press a.archive-hentry-content:hover h2,
